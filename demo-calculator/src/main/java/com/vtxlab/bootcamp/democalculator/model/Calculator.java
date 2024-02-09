@@ -19,7 +19,6 @@ public class Calculator {
     } else if (operation.equals("div")){
       amount = bx.divide(by).setScale(5,RoundingMode.HALF_UP);
     }
-
     return amount;
   }
 }

@@ -1,9 +1,11 @@
 package com.vtxlab.bootcamp.democalculator.controller.impl;
 
+import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.vtxlab.bootcamp.democalculator.controller.CalculatorOperation;
+import com.vtxlab.bootcamp.democalculator.model.PostCalculator;
 import com.vtxlab.bootcamp.democalculator.service.CalculatorService;
 
 @RestController
@@ -14,7 +16,9 @@ public class CalculatorController implements CalculatorOperation {
   private CalculatorService calculatorService;
 
   @Override
-  public double setMethod(double x, double y, String operation){
+  public BigDecimal setMethod(double x, double y, String operation){
     return calculatorService.setMethod(x, y , operation);
   }
+
+  
 }
