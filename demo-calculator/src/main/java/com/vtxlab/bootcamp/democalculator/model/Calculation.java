@@ -16,7 +16,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
-public class PostCalculator {
+public class Calculation {
   
   private BigDecimal x ;
   private BigDecimal y;

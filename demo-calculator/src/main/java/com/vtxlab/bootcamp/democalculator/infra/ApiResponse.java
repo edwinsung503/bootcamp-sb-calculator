@@ -7,12 +7,10 @@ public class ApiResponse<T> {
 
   private String code;
   private String message;
-  private T data;
 
-  public ApiResponse(final String code, final String message, final T data) {
+  public ApiResponse(final String code, final String message) {
     this.code = code;
     this.message = message;
-    this.data = data;
   }
 
   public static <T> ApiResponseBuilder<T> builder() {
@@ -22,7 +20,6 @@ public class ApiResponse<T> {
   public static class ApiResponseBuilder<T> {
     private String code;
     private String message;
-    private T data;
 
     ApiResponseBuilder() {
 
@@ -44,19 +41,16 @@ public class ApiResponse<T> {
     //   return this;
     // }
 
-    public ApiResponseBuilder<T> data(final T data) {
-      this.data = data;
-      return this;
-    }
+   
 
     public ApiResponse<T> build() {
-      return new ApiResponse(this.code, this.message, this.data);
+      return new ApiResponse(this.code, this.message);
     }
 
     public String toString() {
       String var10000 = this.code;
       return "ApiResponse.ApiResponseBuilder(code=" + var10000 + ", message="
-          + this.message + ", data=" + String.valueOf(this.data) + ")";
+          + this.message  + ")";
     }
   }
 
