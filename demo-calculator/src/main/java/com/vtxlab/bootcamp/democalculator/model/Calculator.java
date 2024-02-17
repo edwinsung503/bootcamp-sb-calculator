@@ -29,7 +29,17 @@ public class Calculator {
           break;
       default:
           throw new IllegalArgumentException("Invalid operation: " + operation);
-  }
+    }
   return amount;
+  }
+
+  public static BigDecimal getMethod2(PostRequest calculationRequest){
+    double x = Double.parseDouble(calculationRequest.getX());
+    double y = Double.parseDouble(calculationRequest.getY());
+    String operation = calculationRequest.getOperation();
+
+    BigDecimal result = getMethod(x, y, operation);
+    
+    return result;
   }
 }

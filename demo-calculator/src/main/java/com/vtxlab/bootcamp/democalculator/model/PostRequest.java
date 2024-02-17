@@ -10,17 +10,18 @@ import lombok.Setter;
 import lombok.ToString;
 
 @AllArgsConstructor
-@Builder
+@NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@Builder
 @ToString
-@NoArgsConstructor
-public class Calculation {
-  
-  private BigDecimal x ;
-  private BigDecimal y;
-  private String operation;
-  private String result;
+@EqualsAndHashCode
+public class PostRequest {
 
+    private String x;
+    private String y;
+    private String operation;
+    private String result;
+    
+    
 }

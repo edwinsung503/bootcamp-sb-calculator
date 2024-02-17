@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import com.vtxlab.bootcamp.democalculator.model.Calculation;
+import com.vtxlab.bootcamp.democalculator.model.PostRequest;
 
 public interface CalculatorOperation {
   
@@ -22,12 +22,10 @@ public interface CalculatorOperation {
                   @RequestParam(value ="operation") String add);
 
   //method 2 : Post
-  //http://localhost:8080/api/v1/calucations?x=3&y=a&operation=div
-  //{"x":"string","y":"string","operation":"div"}
-  @PostMapping(value = "/calucate")
+  //http://localhost:8080/api/v1/calucate
+  @PostMapping(value ="/calucate")
   @ResponseStatus(value = HttpStatus.OK)
-  Calculation createCalculation (@RequestBody Calculation calculation);
-
+  BigDecimal createCalculator(@RequestBody PostRequest calculationRequest);//Object 睇成person
   
 
 
