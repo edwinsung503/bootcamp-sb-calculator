@@ -16,7 +16,7 @@ public class CalculatorController implements CalculatorOperation {
   private CalculatorService calculatorService;
 
   @Override
-  public BigDecimal setMethod(double x, double y, String operation){
+  public double setMethod(double x, double y, String operation){
     return calculatorService.setMethod(x, y , operation);
   }
 

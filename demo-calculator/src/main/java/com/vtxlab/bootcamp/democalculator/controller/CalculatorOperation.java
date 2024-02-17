@@ -17,7 +17,7 @@ public interface CalculatorOperation {
 
   @GetMapping(value = "/calucations")
   @ResponseStatus(value = HttpStatus.OK)
-  BigDecimal setMethod(@RequestParam (value="x",required= false, defaultValue ="0.0") double x,
+  double setMethod(@RequestParam (value="x",required= false, defaultValue ="0.0") double x,
                   @RequestParam (value="y") double y,
                   @RequestParam(value ="operation") String add);
 

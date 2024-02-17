@@ -7,7 +7,7 @@ public interface CalculatorService {
   
   //List<Calculation> getCalculations();
 
-  BigDecimal setMethod(double x, double y, String operation);
+  double setMethod(double x, double y, String operation);
   
   BigDecimal createCalculator(PostRequest calculationRequest);
 

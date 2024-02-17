@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 public class Calculator {
   
   
-  public static BigDecimal getMethod(double x,double y, String operation) {
+  public static double getMethod(double x,double y, String operation) {
     BigDecimal bx = BigDecimal.valueOf(x);
     BigDecimal by = BigDecimal.valueOf(y);
     BigDecimal amount = BigDecimal.valueOf(0);
@@ -30,16 +30,16 @@ public class Calculator {
       default:
           throw new IllegalArgumentException("Invalid operation: " + operation);
     }
-  return amount;
+  return amount.doubleValue();
   }
 
-  public static BigDecimal getMethod2(PostRequest calculationRequest){
+  public static double getMethod2(PostRequest calculationRequest){
     double x = Double.parseDouble(calculationRequest.getX());
     double y = Double.parseDouble(calculationRequest.getY());
     String operation = calculationRequest.getOperation();
 
     BigDecimal result = getMethod(x, y, operation);
     
-    return result;
+    return result.doubleValue();
   }
 }

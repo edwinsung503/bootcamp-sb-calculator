@@ -14,7 +14,7 @@ public class CalculatorServiceHolder implements CalculatorService{
   //  return Calculator.getMethod(x, y, operation);
   //}
   @Override
-  public BigDecimal setMethod(double x,double y, String operation){
+  public double setMethod(double x,double y, String operation){
     return Calculator.getMethod(x, y, operation);
   }
 
