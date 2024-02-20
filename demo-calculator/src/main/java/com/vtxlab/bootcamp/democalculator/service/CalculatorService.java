@@ -1,17 +1,17 @@
 package com.vtxlab.bootcamp.democalculator.service;
 
-import java.math.BigDecimal;
-import com.vtxlab.bootcamp.democalculator.model.PostRequest;
+import com.vtxlab.bootcamp.democalculator.dto.request.Calculate;
+import com.vtxlab.bootcamp.democalculator.dto.response.CalculationsDTO;
+import com.vtxlab.bootcamp.democalculator.dto.response.PostCalculatorDTO;
 
 public interface CalculatorService {
   
-  //List<Calculation> getCalculations();
 
-  double setMethod(double x, double y, String operation);
+  CalculationsDTO setMethod(double x, double y, String operation);
   
-  BigDecimal createCalculator(PostRequest calculationRequest);
+  PostCalculatorDTO createCalculator(Calculate calculate);
 
-  BigDecimal setMethod3(double x, double y, String operation);
+  CalculationsDTO setMethod3(double x, double y, String operation);
 
   
 }

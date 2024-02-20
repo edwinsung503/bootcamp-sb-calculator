@@ -2,29 +2,28 @@ package com.vtxlab.bootcamp.democalculator.service.impl;
 
 import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
-import com.vtxlab.bootcamp.democalculator.model.PostRequest;
-import com.vtxlab.bootcamp.democalculator.model.Calculator;
+import com.vtxlab.bootcamp.democalculator.dto.request.Calculate;
+import com.vtxlab.bootcamp.democalculator.dto.response.CalculationsDTO;
+import com.vtxlab.bootcamp.democalculator.dto.response.PostCalculatorDTO;
+import com.vtxlab.bootcamp.democalculator.mapper.Calculator;
 import com.vtxlab.bootcamp.democalculator.service.CalculatorService;
 
 @Service
 public class CalculatorServiceHolder implements CalculatorService{
 
-  //@Override
-  //List<Calculation> getCalculations(){
-  //  return Calculator.getMethod(x, y, operation);
-  //}
+  
   @Override
-  public double setMethod(double x,double y, String operation){
+  public CalculationsDTO setMethod(double x,double y, String operation){
     return Calculator.getMethod(x, y, operation);
   }
 
   @Override
-  public BigDecimal createCalculator(PostRequest calculationRequest){
-    return Calculator.getMethod2(calculationRequest);
+  public PostCalculatorDTO createCalculator(Calculate calculate){
+    return Calculator.getMethod2(calculate);
   }
 
   @Override
-  public BigDecimal setMethod3(double x,double y, String operation){
+  public CalculationsDTO setMethod3(double x,double y, String operation){
     return Calculator.getMethod(x, y, operation);
   }
   

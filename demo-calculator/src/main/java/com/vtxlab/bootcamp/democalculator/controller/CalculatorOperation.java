@@ -2,13 +2,16 @@ package com.vtxlab.bootcamp.democalculator.controller;
 
 import java.math.BigDecimal;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import com.vtxlab.bootcamp.democalculator.model.PostRequest;
+import com.vtxlab.bootcamp.democalculator.dto.request.Calculate;
+import com.vtxlab.bootcamp.democalculator.dto.response.CalculationsDTO;
+import com.vtxlab.bootcamp.democalculator.dto.response.PostCalculatorDTO;
 
 public interface CalculatorOperation {
   
@@ -17,7 +20,7 @@ public interface CalculatorOperation {
 
   @GetMapping(value = "/calucations")
   @ResponseStatus(value = HttpStatus.OK)
-  double setMethod(@RequestParam (value="x",required= false, defaultValue ="0.0") double x,
+  CalculationsDTO setMethod(@RequestParam (value="x",required= false, defaultValue ="0.0") double x,
                   @RequestParam (value="y") double y,
                   @RequestParam(value ="operation") String add);
 
@@ -25,7 +28,7 @@ public interface CalculatorOperation {
   //http://localhost:8080/api/v1/calucate
   @PostMapping(value ="/calucate")
   @ResponseStatus(value = HttpStatus.OK)
-  BigDecimal createCalculator(@RequestBody PostRequest calculationRequest);//Object 睇成person
+  ResponseEntity<PostCalculatorDTO> createCalculator2(@RequestBody Calculate calculate);
   
 
 
@@ -34,7 +37,7 @@ public interface CalculatorOperation {
   //http://localhost:8080/api/v1/3/2/div
   @GetMapping(value= "/{x}/{y}/{operation}")
   @ResponseStatus(value = HttpStatus.OK)
-  BigDecimal setMethod3(@PathVariable(name = "x") double x, 
+  CalculationsDTO setMethod3(@PathVariable(name = "x") double x, 
                         @PathVariable(name = "y") double y,
                         @PathVariable(name = "operation")String operation);
 

@@ -41,7 +41,7 @@ public class ApiResponse<T> {
     //   return this;
     // }
 
-   
+    
 
     public ApiResponse<T> build() {
       return new ApiResponse(this.code, this.message);
@@ -50,7 +50,7 @@ public class ApiResponse<T> {
     public String toString() {
       String var10000 = this.code;
       return "ApiResponse.ApiResponseBuilder(code=" + var10000 + ", message="
-          + this.message  + ")";
+          + this.message +  ")";
     }
   }
 

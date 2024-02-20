@@ -1,11 +1,15 @@
 package com.vtxlab.bootcamp.democalculator.controller.impl;
 
-import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.vtxlab.bootcamp.democalculator.controller.CalculatorOperation;
-import com.vtxlab.bootcamp.democalculator.model.PostRequest;
+import com.vtxlab.bootcamp.democalculator.dto.request.Calculate;
+import com.vtxlab.bootcamp.democalculator.dto.response.CalculationsDTO;
+import com.vtxlab.bootcamp.democalculator.dto.response.PostCalculatorDTO;
 import com.vtxlab.bootcamp.democalculator.service.CalculatorService;
 
 @RestController
@@ -16,17 +20,18 @@ public class CalculatorController implements CalculatorOperation {
   private CalculatorService calculatorService;
 
   @Override
-  public double setMethod(double x, double y, String operation){
+  public CalculationsDTO setMethod(double x, double y, String operation){
     return calculatorService.setMethod(x, y , operation);
   }
 
   @Override
-  public BigDecimal createCalculator(PostRequest calculationRequest){
-    return calculatorService.createCalculator(calculationRequest);
+  public ResponseEntity<PostCalculatorDTO> createCalculator2(@RequestBody Calculate calculate){
+    PostCalculatorDTO createAnwser = calculatorService.createCalculator(calculate);
+    return ResponseEntity.ok(createAnwser);
   }
 
   @Override
-  public BigDecimal setMethod3(double x, double y, String operation){
+  public CalculationsDTO setMethod3(double x, double y, String operation){
     return calculatorService.setMethod3(x, y, operation);
   }
 
