@@ -26,7 +26,7 @@ public interface CalculatorOperation {
 
   //method 2 : Post
   //http://localhost:8080/api/v1/calucate
-  @PostMapping(value ="/calucate")
+  @PostMapping(value ="/calculate")
   @ResponseStatus(value = HttpStatus.OK)
   ResponseEntity<PostCalculatorDTO> createCalculator2(@RequestBody Calculate calculate);
   

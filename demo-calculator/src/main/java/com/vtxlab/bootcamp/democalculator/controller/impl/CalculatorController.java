@@ -2,6 +2,7 @@ package com.vtxlab.bootcamp.democalculator.controller.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +27,10 @@ public class CalculatorController implements CalculatorOperation {
 
   @Override
   public ResponseEntity<PostCalculatorDTO> createCalculator2(@RequestBody Calculate calculate){
-    PostCalculatorDTO createAnwser = calculatorService.createCalculator(calculate);
-    return ResponseEntity.ok(createAnwser);
+    PostCalculatorDTO createAnwser = calculatorService.createCalculator2(calculate);
+    return ResponseEntity.ok()
+              .contentType(MediaType.APPLICATION_JSON)
+              .body(createAnwser);
   }
 
   @Override

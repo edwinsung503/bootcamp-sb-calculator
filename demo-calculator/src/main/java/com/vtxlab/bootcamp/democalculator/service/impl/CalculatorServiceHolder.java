@@ -18,7 +18,7 @@ public class CalculatorServiceHolder implements CalculatorService{
   }
 
   @Override
-  public PostCalculatorDTO createCalculator(Calculate calculate){
+  public PostCalculatorDTO createCalculator2(Calculate calculate){
     return Calculator.getMethod2(calculate);
   }
 

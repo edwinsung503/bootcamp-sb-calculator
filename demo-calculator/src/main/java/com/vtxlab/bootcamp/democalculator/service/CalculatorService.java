@@ -9,7 +9,7 @@ public interface CalculatorService {
 
   CalculationsDTO setMethod(double x, double y, String operation);
   
-  PostCalculatorDTO createCalculator(Calculate calculate);
+  PostCalculatorDTO createCalculator2(Calculate calculate);
 
   CalculationsDTO setMethod3(double x, double y, String operation);
 
