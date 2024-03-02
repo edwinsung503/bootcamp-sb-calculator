@@ -14,7 +14,7 @@ import com.vtxlab.bootcamp.democalculator.dto.response.PostCalculatorDTO;
 import com.vtxlab.bootcamp.democalculator.service.CalculatorService;
 
 @RestController
-@RequestMapping(value = "/api/v1")
+@RequestMapping(value = "calculator/api/v1")
 public class CalculatorController implements CalculatorOperation {
  
   @Autowired
